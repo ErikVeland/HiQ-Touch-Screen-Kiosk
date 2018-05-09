@@ -1,0 +1,1 @@
+HiQ Touch Screen Kiosk
