@@ -1,0 +1,183 @@
+/* @group Tree */
+* {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+html,body {
+	width: 100%;
+	height: 100%;
+	font-size: 120%;
+	font-family: sans-serif;
+	margin: 0;
+}
+
+body {
+	background-color: #F36F21;
+}
+
+header {
+	max-width: 50%;
+	margin: 0 auto;
+	display: block;
+}
+
+header svg {
+	width: 100%;
+	
+}
+
+h1 {
+	color: #fff;
+}
+
+.tv {
+	width: 1080px;
+	height: 1920px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background: rgba(255,255,255,.1);
+	padding: 50px 0;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	transform: translate(-50%,-50%) scale(.7);
+}
+
+
+/* DECISION TREE */
+.tree {
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    height: 76%;
+    width: 100%;
+  	perspective-origin: 100% 100%;
+  	transform: perspective(1200px);
+  	-webkit-transform-style: preserve-3d;
+  	-webkit-perspective: 1200;
+}
+
+.tree * {
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.tree li {
+    width: 90%;
+    position: absolute;
+    margin: 0 auto;
+    background-color: rgba(242, 111, 33, .8);
+    padding: 20px 50px;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    border-radius: 10px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.tree li ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tree li ul li {
+	position: relative;
+	width: 100%;
+    flex: 1 calc(50% - 40px);
+    margin: 20px 0;
+    padding: 0;
+}
+
+.tree li ul li:nth-of-type(even) {
+	margin-left: 40px;
+}
+
+.tree a,
+.tree a:visited {
+	color: #333;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	min-height: 180px;
+	padding: 20px;
+	margin: 0;
+	font-size: 40px;
+		text-decoration: none;
+	    border-radius: 10px;
+	    background-color: rgba(255,255,255,.8);
+	    color: #363636;
+	    cursor: pointer;
+	    transition: all 60ms ease-in-out;
+	    position: relative;
+}
+
+.tree a i {
+	display: inline-block;
+	font-size: 90px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.tree .inactive {
+	transform: rotateY(40deg) translateZ(739px) translateX(639px);
+	pointer-events: none;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+}
+.tree .previous {
+	z-index: 998;
+	transform: translateX(-200px) translateY(-1000px) translateZ(-1000px);
+	opacity: .9;
+	filter: blur(7px);
+}
+
+.tree .active {
+	z-index: 999;
+	transform: translateX(0px) translateY(0) translateZ(0) rotateZ(0deg);
+	opacity: 1;
+}
+
+
+
+.btn {
+	display: inline-block;
+    padding: 10px 8px;
+
+    color: #333;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,.8);
+
+    line-height: 1.3;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all 60ms ease-in-out;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    -webkit-appearance: none;
+    height: auto!important;
+}
+
+[class^="dctree-answer"]:hover,
+.dctree-prev:hover,
+.btn:hover {
+	background-color: #a3a3a3;
+}
+
+/* @end */
